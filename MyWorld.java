@@ -17,5 +17,11 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        
+        //Create Flappy Bird
+        FlappyBird flappy = new FlappyBird();
+        
+        //Instantiate Flappy Bird into the world
+        addObject(flappy, 100, getHeight()/2);
     }
 }
