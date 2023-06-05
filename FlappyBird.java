@@ -25,5 +25,14 @@ public class FlappyBird extends Actor
             dy = -15;
         }
         dy = dy + gravity;
+        
+        // Draws game over screen when flappy bird hits the ground
+        MyWorld world = (MyWorld) getWorld();
+        if (getY()+100 >= world.getHeight())
+        {
+            dy = 0;
+            gravity = 0;
+            world.gameOver();
+        }
     }
 }

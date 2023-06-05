@@ -24,4 +24,9 @@ public class MyWorld extends World
         //Instantiate Flappy Bird into the world
         addObject(flappy, 100, getHeight()/2);
     }
+    public void gameOver()
+    {
+        GameOverLabel gg = new GameOverLabel();
+        addObject(gg, 200, 300);
+    }
 }
