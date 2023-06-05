@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FlappyBird extends Actor
 {
+     double dy = 0;
+     double gravity = 1.3;
     /**
      * Act - do whatever the FlappyBird wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -15,5 +17,13 @@ public class FlappyBird extends Actor
     public void act()
     {
         // Add your action code here.
+        setLocation(getX(), (int) (getY() + dy));
+        
+        // Makes Flappy Bird fly with the click of up arrow
+        if (Greenfoot.isKeyDown("up") == true)
+        {
+            dy = -15;
+        }
+        dy = dy + gravity;
     }
 }
