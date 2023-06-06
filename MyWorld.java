@@ -27,6 +27,6 @@ public class MyWorld extends World
     public void gameOver()
     {
         GameOverLabel gg = new GameOverLabel();
-        addObject(gg, 200, 300);
+        addObject(gg, getWidth()/2, getHeight()/2);
     }
 }
