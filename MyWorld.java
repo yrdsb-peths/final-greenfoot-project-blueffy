@@ -29,6 +29,8 @@ public class MyWorld extends World
         counter ++;
         if (counter == 100)
         {
+            Pipe thePipe = new Pipe();
+            addObject(thePipe, getWidth(), getHeight()/2);
             counter = 0;
         }
     }
