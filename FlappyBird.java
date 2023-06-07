@@ -22,7 +22,7 @@ public class FlappyBird extends Actor
         
         // Changes the bird's angle depending on its velocity
         rotateFlappyBird();
-        
+                
         // Makes Flappy Bird fly with the click of up arrow
         if (Greenfoot.isKeyDown("up") == true)
         {
@@ -34,6 +34,15 @@ public class FlappyBird extends Actor
         // Draws game over screen when flappy bird hits the ground
         MyWorld world = (MyWorld) getWorld();
         if (getY()+100 >= world.getHeight())
+        {
+            dy = 0;
+            gravity = 0;
+            Pipe.pipeSpeed = 0;
+            MyWorld.counter = 0;
+            world.gameOver();
+        }
+        //Draws game over screen flappy bird hits a pipe
+        if (getOneIntersectingObject(Pipe.class) != null)
         {
             dy = 0;
             gravity = 0;

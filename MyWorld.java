@@ -31,9 +31,10 @@ public class MyWorld extends World
         {
             Pipe thePipe = new Pipe();
             Pipe.pipeSpeed = -4;
+            
             GreenfootImage image = thePipe.getImage();
             
-            addObject(thePipe, getWidth(), getHeight()/2);
+            addObject(thePipe, getWidth(), getHeight()/2 + image.getHeight()/2);
             counter = 0;
         }
     }
