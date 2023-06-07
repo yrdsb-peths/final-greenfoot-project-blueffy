@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public static int counter = 0;
+    int pipeSpacing = 150;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -34,7 +35,11 @@ public class MyWorld extends World
             
             GreenfootImage image = thePipe.getImage();
             
-            addObject(thePipe, getWidth(), getHeight()/2 + image.getHeight()/2);
+            addObject(thePipe, getWidth(), getHeight()/2 + image.getHeight()/2 + Greenfoot.getRandomNumber(image.getHeight()/2 - 100));
+            
+            Pipe topPipe = new Pipe();
+            addObject(topPipe, getWidth(), getHeight());
+            topPipe.setLocation(thePipe.getX(), thePipe.getY() - thePipe.getImage().getHeight() - pipeSpacing);
             counter = 0;
         }
     }

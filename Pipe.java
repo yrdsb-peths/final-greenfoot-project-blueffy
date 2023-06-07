@@ -9,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Pipe extends Actor
 {
     public static int pipeSpeed = -4;
-    int heightShift = Greenfoot.getRandomNumber(10);
     /**
      * Act - do whatever the Pipe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
