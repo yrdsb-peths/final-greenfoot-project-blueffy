@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    int counter = 0;
+    public static int counter = 0;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -30,6 +30,9 @@ public class MyWorld extends World
         if (counter == 100)
         {
             Pipe thePipe = new Pipe();
+            Pipe.pipeSpeed = -4;
+            GreenfootImage image = thePipe.getImage();
+            
             addObject(thePipe, getWidth(), getHeight()/2);
             counter = 0;
         }

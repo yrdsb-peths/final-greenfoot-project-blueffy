@@ -37,6 +37,8 @@ public class FlappyBird extends Actor
         {
             dy = 0;
             gravity = 0;
+            Pipe.pipeSpeed = 0;
+            MyWorld.counter = 0;
             world.gameOver();
         }
     }
