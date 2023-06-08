@@ -39,7 +39,13 @@ public class MyWorld extends World
             
             Pipe topPipe = new Pipe();
             addObject(topPipe, getWidth(), getHeight());
+            topPipe.setRotation(180);
             topPipe.setLocation(thePipe.getX(), thePipe.getY() - thePipe.getImage().getHeight() - pipeSpacing);
+            
+            BottomPipeHead bottomPipeMouth = new BottomPipeHead();
+            addObject(bottomPipeMouth, getWidth(), getHeight());
+            bottomPipeMouth.setLocation(thePipe.getX(), thePipe.getY() + 138 - thePipe.getImage().getHeight());
+            
             counter = 0;
         }
     }
