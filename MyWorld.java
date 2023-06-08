@@ -35,16 +35,20 @@ public class MyWorld extends World
             
             GreenfootImage image = thePipe.getImage();
             
-            addObject(thePipe, getWidth(), getHeight()/2 + image.getHeight()/2 + Greenfoot.getRandomNumber(image.getHeight()/2 - 100));
+            addObject(thePipe, getWidth(), getHeight()/2 + image.getHeight()/2 + Greenfoot.getRandomNumber(image.getHeight()/2 - 20));
             
             Pipe topPipe = new Pipe();
             addObject(topPipe, getWidth(), getHeight());
-            topPipe.setRotation(180);
             topPipe.setLocation(thePipe.getX(), thePipe.getY() - thePipe.getImage().getHeight() - pipeSpacing);
             
             BottomPipeHead bottomPipeMouth = new BottomPipeHead();
             addObject(bottomPipeMouth, getWidth(), getHeight());
             bottomPipeMouth.setLocation(thePipe.getX(), thePipe.getY() + 138 - thePipe.getImage().getHeight());
+            
+            TopPipeHead topPipeMouth = new TopPipeHead();
+            addObject(topPipeMouth, getWidth(), getHeight());
+            topPipeMouth.setLocation(thePipe.getX(), thePipe.getY() + 9 - thePipe.getImage().getHeight());
+            
             
             counter = 0;
         }
