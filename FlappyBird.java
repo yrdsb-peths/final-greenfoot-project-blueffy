@@ -35,19 +35,11 @@ public class FlappyBird extends Actor
         MyWorld world = (MyWorld) getWorld();
         if (getY()+100 >= world.getHeight())
         {
-            dy = 0;
-            gravity = 0;
-            Pipe.pipeSpeed = 0;
-            MyWorld.counter = 0;
             world.gameOver();
         }
         //Draws game over screen flappy bird hits a pipe
         if (getOneIntersectingObject(Pipe.class) != null)
         {
-            dy = 0;
-            gravity = 0;
-            Pipe.pipeSpeed = 0;
-            MyWorld.counter = 0;
             world.gameOver();
         }
     }

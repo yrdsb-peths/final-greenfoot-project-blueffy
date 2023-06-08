@@ -35,7 +35,7 @@ public class MyWorld extends World
             
             GreenfootImage image = thePipe.getImage();
             
-            addObject(thePipe, getWidth(), getHeight()/2 + image.getHeight()/2 + Greenfoot.getRandomNumber(image.getHeight()/2 - 20));
+            addObject(thePipe, getWidth(), getHeight()/2 + image.getHeight()/2 + Greenfoot.getRandomNumber(image.getHeight()/2 - 25));
             
             Pipe topPipe = new Pipe();
             addObject(topPipe, getWidth(), getHeight());
@@ -57,5 +57,6 @@ public class MyWorld extends World
     {
         GameOverLabel gg = new GameOverLabel();
         addObject(gg, getWidth()/2, getHeight()/2);
+        Greenfoot.stop();
     }
 }
