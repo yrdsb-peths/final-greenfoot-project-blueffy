@@ -30,28 +30,31 @@ public class MyWorld extends World
         counter ++;
         if (counter == 100)
         {
-            Pipe thePipe = new Pipe();
-            Pipe.pipeSpeed = -4;
-            
-            GreenfootImage image = thePipe.getImage();
-            
-            addObject(thePipe, getWidth(), getHeight()/2 + image.getHeight()/2 + Greenfoot.getRandomNumber(image.getHeight()/2 - 25));
-            
-            Pipe topPipe = new Pipe();
-            addObject(topPipe, getWidth(), getHeight());
-            topPipe.setLocation(thePipe.getX(), thePipe.getY() - thePipe.getImage().getHeight() - pipeSpacing);
-            
-            BottomPipeHead bottomPipeMouth = new BottomPipeHead();
-            addObject(bottomPipeMouth, getWidth(), getHeight());
-            bottomPipeMouth.setLocation(thePipe.getX(), thePipe.getY() + 138 - thePipe.getImage().getHeight());
-            
-            TopPipeHead topPipeMouth = new TopPipeHead();
-            addObject(topPipeMouth, getWidth(), getHeight());
-            topPipeMouth.setLocation(thePipe.getX(), thePipe.getY() + 9 - thePipe.getImage().getHeight());
-            
+            createPipes();
             
             counter = 0;
         }
+    }
+    public void createPipes()
+    {
+        Pipe thePipe = new Pipe();
+        Pipe.pipeSpeed = -4;
+            
+        GreenfootImage image = thePipe.getImage();
+            
+        addObject(thePipe, getWidth(), getHeight()/2 + image.getHeight()/2 + Greenfoot.getRandomNumber(image.getHeight()/2 - 25));
+            
+        Pipe topPipe = new Pipe();
+        addObject(topPipe, getWidth(), getHeight());
+        topPipe.setLocation(thePipe.getX(), thePipe.getY() - thePipe.getImage().getHeight() - pipeSpacing);
+            
+        BottomPipeHead bottomPipeMouth = new BottomPipeHead();
+        addObject(bottomPipeMouth, getWidth(), getHeight());
+        bottomPipeMouth.setLocation(thePipe.getX(), thePipe.getY() + 138 - thePipe.getImage().getHeight());
+            
+        TopPipeHead topPipeMouth = new TopPipeHead();
+        addObject(topPipeMouth, getWidth(), getHeight());
+        topPipeMouth.setLocation(thePipe.getX(), thePipe.getY() + 9 - thePipe.getImage().getHeight()); 
     }
     public void gameOver()
     {
