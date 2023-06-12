@@ -8,8 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    public static int counter = 0;
+    int pipeCounter = 0;
+    int flappyBirdCounter = 0;
     int pipeSpacing = 150;
+    int score = 0;
+    int firstPipe = 225;
+    Score scoreObj = null;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -24,15 +28,29 @@ public class MyWorld extends World
         
         //Instantiate Flappy Bird into the world
         addObject(flappy, 100, getHeight()/2);
+        
+        //Create a score object
+        scoreObj = new Score();
+        scoreObj.setScore(0);
+        
+        addObject(scoreObj, 100, 100);
     }
     public void act()
     {
-        counter ++;
-        if (counter == 100)
+        pipeCounter ++;
+        if (pipeCounter % 100 == 0)
         {
             createPipes();
-            
-            counter = 0;
+        }
+        
+        if (pipeCounter >= firstPipe)
+        {
+            if (flappyBirdCounter % 100 == 0)
+            {
+                score++;
+                scoreObj.setScore(score);
+            }
+            flappyBirdCounter++;
         }
     }
     public void createPipes()
@@ -60,6 +78,7 @@ public class MyWorld extends World
     {
         GameOverLabel gg = new GameOverLabel();
         addObject(gg, getWidth()/2, getHeight()/2);
+        pipeCounter = 0;
         Greenfoot.stop();
     }
 }
