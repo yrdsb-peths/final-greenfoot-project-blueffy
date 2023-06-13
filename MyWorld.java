@@ -23,6 +23,8 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false);
         
+        setPaintOrder(Score.class, FlappyBird.class, Pipe.class);
+        
         //Create Flappy Bird
         FlappyBird flappy = new FlappyBird();
         
@@ -33,7 +35,7 @@ public class MyWorld extends World
         scoreObj = new Score();
         scoreObj.setScore(0);
         
-        addObject(scoreObj, 100, 100);
+        addObject(scoreObj, getWidth()/2, 100);
     }
     public void act()
     {

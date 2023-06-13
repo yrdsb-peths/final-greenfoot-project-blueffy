@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class Score here.
  * 
@@ -19,6 +18,10 @@ public class Score extends Actor
     public Score()
     {
         GreenfootImage newImage = new GreenfootImage(100, 50);
+        newImage.setColor(Color.WHITE);
+        
+        newImage.setFont (new Font ("OCR A Extended", true, false, 40));
+
         setImage(newImage);
     }
     
