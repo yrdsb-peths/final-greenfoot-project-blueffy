@@ -11,6 +11,8 @@ public class FlappyBird extends Actor
      double dy = 0;
      double gravity = 0.4;
      double launchSpeed = -7;
+     int imageIndex = 0;
+     GreenfootImage[] anim = new GreenfootImage[5];
     /**
      * Act - do whatever the FlappyBird wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -24,9 +26,15 @@ public class FlappyBird extends Actor
         rotateFlappyBird();
                 
         // Makes Flappy Bird fly with the click of up arrow
-        if (Greenfoot.isKeyDown("up") == true)
+        if (Greenfoot.isKeyDown("up"))
         {
             dy = launchSpeed;
+            for (int i = 0; i < anim.length; i++)
+            {
+                anim[i] = new GreenfootImage("images/flappybird_anim/tile00" + i + ".png");
+            }
+            setImage(anim[imageIndex]);
+            imageIndex = (imageIndex + 1) % anim.length;
         }
         dy = dy + gravity;
         
