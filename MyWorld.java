@@ -1,8 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
- * 
+ * Holds all objects and instantiates them into a world screen.
+ * Visually displays all created objects. 
  * @author (Ashkan Siassi) 
  * @version (a version number or a date)
  */
@@ -17,7 +17,7 @@ public class MyWorld extends World
     GreenfootSound pointSound = new GreenfootSound("point.mp3");
     /**
      * Constructor for objects of class MyWorld.
-     * Creates and instantiates Flappy Bird along with a score label.
+     * Creates and instantiates Flappy Bird into the world along with a score label.
      * Sets object prioritization, essentially what should mask over the other. 
      */
     public MyWorld()
@@ -40,6 +40,10 @@ public class MyWorld extends World
         
         addObject(scoreObj, getWidth()/2, 100);
     }
+    /**
+     * Creates pipes in equal distance from each other for every halfstep.
+     * Allows for a point to be added to the score for every pipe passed.
+     */
     public void act()
     {
         pipeCounter ++;
@@ -59,6 +63,10 @@ public class MyWorld extends World
             flappyBirdCounter++;
         }
     }
+    /**
+     * Instantiates Pipe location boundaries and speed.
+     * Randomizes pipe location.
+     */
     public void createPipes()
     {
         Pipe thePipe = new Pipe();
@@ -80,6 +88,10 @@ public class MyWorld extends World
         addObject(topPipeMouth, getWidth(), getHeight());
         topPipeMouth.setLocation(thePipe.getX(), thePipe.getY() + 9 - thePipe.getImage().getHeight()); 
     }
+    /**
+     * Allows game to end on death/contact with pipe/ground.
+     * Displays game over label on death/contact with pipe/ground.
+     */
     public void gameOver()
     {
         GameOverLabel gg = new GameOverLabel();

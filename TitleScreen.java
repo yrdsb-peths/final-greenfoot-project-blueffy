@@ -1,9 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreen here.
- * 
- * @author (your name) 
+ * Creates title screen which includes instructions before beginning game. 
+ * @author (Ashkan Siassi) 
  * @version (a version number or a date)
  */
 public class TitleScreen extends World
@@ -11,7 +10,7 @@ public class TitleScreen extends World
 
     /**
      * Constructor for objects of class TitleScreen.
-     * 
+     * Instantiates title screen along with all the images.
      */
     public TitleScreen()
     {    
@@ -19,6 +18,9 @@ public class TitleScreen extends World
         super(600, 400, 1); 
         prepare();
     }
+    /**
+     * Takes title screen to the game world on "up arrow" input. 
+     */
     public void act()
     {
         if (Greenfoot.isKeyDown("up"))

@@ -1,9 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class FlappyBird here.
- * 
- * @author (your name) 
+ * Flappy Bird's object mechanics and world physics.
+ * @author (Ashkan Siassi) 
  * @version (a version number or a date)
  */
 public class FlappyBird extends Actor
@@ -16,12 +15,10 @@ public class FlappyBird extends Actor
      GreenfootSound flapSound = new GreenfootSound("flap.mp3");
      GreenfootSound hitSound = new GreenfootSound("hit.mp3");
     /**
-     * Act - do whatever the FlappyBird wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
      * Sets Flappy Bird's starting position in addition to creating all of its mechanics
      * and animations which utilizes the world's physics values like gravity and launch
      * speed.
-     * 
+     * Includes a death mechanic where game ends on Flappy Bird contact with pipe or ground.
      */
     public void act()
     {

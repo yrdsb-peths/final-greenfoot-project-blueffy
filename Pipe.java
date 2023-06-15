@@ -1,17 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Pipe here.
- * 
- * @author (your name) 
+ * Sets pipe image and location and speed to be used for later code.
+ * @author (Ashkan Siassi) 
  * @version (a version number or a date)
  */
 public class Pipe extends Actor
 {
     public static int pipeSpeed = -4;
     /**
-     * Act - do whatever the Pipe wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Sets a fixed pipe location.
      */
     public void act()
     {

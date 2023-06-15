@@ -1,12 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-/**
- * Write a description of class Score here.
- * 
+/**.
+ * Creates score to be instantiated in MyWorld.
  * @author (your name) 
  * @version (a version number or a date)
  */
 public class Score extends Actor
 {
+    /**
+     * Creates score object, font, location, and color. 
+     */
     public Score()
     {
         GreenfootImage newImage = new GreenfootImage(100, 50);
@@ -16,7 +18,9 @@ public class Score extends Actor
 
         setImage(newImage);
     }
-    
+    /**
+     * Sets score size.
+     */
     public void setScore(int score)
     {
         GreenfootImage newImage = getImage();
