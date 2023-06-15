@@ -14,15 +14,18 @@ public class MyWorld extends World
     int score = 0;
     int firstPipe = 225;
     Score scoreObj = null;
+    GreenfootSound pointSound = new GreenfootSound("point.mp3");
     /**
      * Constructor for objects of class MyWorld.
-     * 
+     * Creates and instantiates Flappy Bird along with a score label.
+     * Sets object prioritization, essentially what should mask over the other. 
      */
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false);
         
+        //Allows the following classes and objects to mask over the other based on priority order.
         setPaintOrder(Score.class, FlappyBird.class, Pipe.class);
         
         //Create Flappy Bird
@@ -51,6 +54,7 @@ public class MyWorld extends World
             {
                 score++;
                 scoreObj.setScore(score);
+                pointSound.play();
             }
             flappyBirdCounter++;
         }

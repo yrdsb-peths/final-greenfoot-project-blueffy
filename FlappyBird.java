@@ -13,9 +13,15 @@ public class FlappyBird extends Actor
      double launchSpeed = -7;
      int imageIndex = 0;
      GreenfootImage[] anim = new GreenfootImage[5];
+     GreenfootSound flapSound = new GreenfootSound("flap.mp3");
+     GreenfootSound hitSound = new GreenfootSound("hit.mp3");
     /**
      * Act - do whatever the FlappyBird wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
+     * Sets Flappy Bird's starting position in addition to creating all of its mechanics
+     * and animations which utilizes the world's physics values like gravity and launch
+     * speed.
+     * 
      */
     public void act()
     {
@@ -29,6 +35,7 @@ public class FlappyBird extends Actor
         if (Greenfoot.isKeyDown("up"))
         {
             dy = launchSpeed;
+            flapSound.play();
             for (int i = 0; i < anim.length; i++)
             {
                 anim[i] = new GreenfootImage("images/flappybird_anim/tile00" + i + ".png");
@@ -44,11 +51,13 @@ public class FlappyBird extends Actor
         if (getY()+100 >= world.getHeight())
         {
             world.gameOver();
+            hitSound.play();
         }
         //Draws game over screen flappy bird hits a pipe
         if (getOneIntersectingObject(Pipe.class) != null)
         {
             world.gameOver();
+            hitSound.play();
         }
     }
     public void rotateFlappyBird()
