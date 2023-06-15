@@ -1,8 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GameOverLabel here.
- * 
+ * Sets game over label image.
  * @author (your name) 
  * @version (a version number or a date)
  */
