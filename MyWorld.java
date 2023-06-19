@@ -2,6 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Holds all objects and instantiates them into a world screen.
+ * test
  * Visually displays all created objects. 
  * @author (Ashkan Siassi) 
  * @version (a version number or a date)
